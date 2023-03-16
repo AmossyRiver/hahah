@@ -1,0 +1,321 @@
+body{
+    overflow: hidden;
+}
+.navigation {
+    position: fixed;
+    top: 20px;
+    left: 1px;
+    bottom: 20px;
+    width: 70px;
+    border-radius: 10px;
+    box-sizing: initial;
+    border-left: 5px solid #003f88 ;
+    background: #003f88 ;
+    transition: width 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 300px;
+    border-left: 5px solid #003f88 ;
+    background: #003f88 ;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li.active {
+    background: #ffffff;
+}
+
+.navigation ul li b:nth-child(1) {
+    position: absolute;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    background: #ffffff;
+    display: none;
+}
+
+.navigation ul li b:nth-child(1):before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    background: #003f88 ;
+}
+
+.navigation.active ul li b:nth-child(1):before {
+    background: #003f88 ;
+}
+
+.navigation ul li b:nth-child(2) {
+    position: absolute;
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background: #003f88 ;
+    display: none;
+
+}
+
+.navigation ul li b:nth-child(2):before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    background: #003f88 ;
+}
+
+.navigation.active ul li b:nth-child(2):before {
+    background: #003f88 ;
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2) {
+    display: block;
+}
+
+.navigation ul li a {
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+.navigation ul li.active a {
+    color: #003f88 ;
+}
+
+.navigation.active ul li.active a {
+    color: #003f88 ;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.5em;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+
+}
+
+.toggle {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background: #003f88 ;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-content: center;
+}
+
+.toggle.active {
+    background: #003f88 ;
+}
+
+.toggle ion-icon {
+    position: absolute;
+    top: 7px;
+    color: #003f88 ;
+    font-size: 34px;
+    display: none;
+}
+
+.toggle ion-icon.open,
+.toggle.active ion-icon.close {
+    display: none;
+}
+
+.toggle ion-icon .close,
+.toggle.active ion-icon.open {
+    display: none;
+}
+
+.main {
+    margin-left: 70px; /* Same as the width of the sidenav */
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    transition: 0.5s;
+}
+.main.active{
+    background: #ffffff;
+}
+.login-container{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+
+}
+.bluebg{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:rgba(255,255,255,0.2);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.15);
+}
+.bluebg .box{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bluebg .box h2{
+    color: #003f88;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px ;
+}
+.bluebg .box.active h2{
+    color: #00ABE1 ;
+}
+.bluebg .box button{
+    cursor: pointer;
+    padding: 10px 20px;
+    background:#003f88;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+
+}
+.bluebg .box.active button{
+    background:#00ABE1  ;
+}
+
+.formBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #003f88;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0 5px 45px rgba(0,0,0,0.25);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+
+}
+.formBx.active {
+    left: 50%;
+    background:#00ABE1 ;
+}
+.formBx .form{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+.formBx .sign-inform{
+    transition-delay: 0.25s;
+}
+.formBx.active .sign-inform{
+    left:-100%;
+    transition-delay: 0s;
+}
+.formBx .sign-upform {
+    left:100%;
+    transition-delay: 0s;
+}
+.formBx.active .sign-upform {
+    left: 0;
+    transition-delay: 0.25s;
+}
+.formBx .form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.formBx .form form h3{
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.formBx .form form input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #333;
+}
+.formBx .form form button{
+    background:#ffffff;
+    border: none;
+    color: #003f88;
+    max-width: 100px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #333;
+}
+.formBx.active .form form button{
+    color: #00ABE1 ;
+}
+.formBx .form form .forgot{
+    color: #ffffff;
+}
+
+/*body{
+    filter: blur(2px)
+}*/
